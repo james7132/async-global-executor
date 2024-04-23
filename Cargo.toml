@@ -2,7 +2,7 @@
 name = "async-global-executor"
 version = "2.4.1"
 authors = ["Marc-Antoine Perennou <Marc-Antoine@Perennou.com>"]
-description =  "A global executor built on top of async-executor and async-io"
+description = "A global executor built on top of async-executor and async-io"
 edition = "2021"
 license = "Apache-2.0 OR MIT"
 repository = "https://github.com/Keruspe/async-global-executor"
@@ -21,7 +21,9 @@ tokio03 = ["tokio03-crate"]
 
 [dependencies]
 async-channel = "^2.1.1"
-async-executor = "^1.8"
+async-executor = { git = "https://github.com/james7132/async-executor", branch = "leaked-executor", features = [
+  "static",
+] }
 async-lock = "^3.2"
 blocking = "^1.5"
 futures-lite = "^2.0"
